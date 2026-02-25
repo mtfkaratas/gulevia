@@ -39,7 +39,19 @@ export const LOCALE_LABELS: Record<Locale, string> = {
 };
 
 /**
- * Flag emoji for each locale (no external asset; works everywhere).
+ * ISO 3166-1 alpha-2 country code for react-country-flag (us → US, uk → GB).
+ */
+export const LOCALE_TO_COUNTRY_CODE: Record<Locale, string> = {
+  us: "US",
+  uk: "GB",
+  de: "DE",
+  fr: "FR",
+  hr: "HR",
+  tr: "TR",
+};
+
+/**
+ * Flag emoji for each locale (fallback when react-country-flag not used, e.g. inside <option>).
  */
 export const LOCALE_FLAGS: Record<Locale, string> = {
   us: "🇺🇸",
