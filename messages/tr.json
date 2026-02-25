@@ -1,0 +1,10 @@
+{
+  "Layout": { "title": "Layout" },
+  "Home": { "title": "Home" },
+  "YachtListing": { "title": "Yacht listing" },
+  "YachtDetail": { "title": "Yacht detail" },
+  "RouteListing": { "title": "Route listing" },
+  "RouteDetail": { "title": "Route detail" },
+  "About": { "title": "About" },
+  "Contact": { "title": "Contact" }
+}
