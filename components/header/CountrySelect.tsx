@@ -2,7 +2,7 @@
 
 import ReactCountryFlag from "react-country-flag";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { LOCALES, LOCALE_LABELS, LOCALE_FLAGS, LOCALE_TO_COUNTRY_CODE, type Locale } from "@/lib/locale";
+import { LOCALES, LOCALE_LABELS, LOCALE_TO_COUNTRY_CODE, type Locale } from "@/lib/locale";
 
 type CountrySelectProps = {
   /** Current locale (from URL). */
@@ -77,7 +77,7 @@ export function CountrySelect({
       >
         {LOCALES.map((locale) => (
           <option key={locale} value={locale}>
-            {flagsOnly ? LOCALE_FLAGS[locale] : `${LOCALE_FLAGS[locale]} ${LOCALE_LABELS[locale]}`}
+            {LOCALE_LABELS[locale]}
           </option>
         ))}
       </select>

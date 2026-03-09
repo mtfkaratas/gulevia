@@ -23,7 +23,7 @@ export function NavDesktop({
 }: NavDesktopProps) {
   return (
     <nav
-      className="hidden md:flex items-center gap-4 text-sm text-black"
+      className="hidden md:flex items-center gap-4 text-[16px] text-black"
       aria-label="Main navigation"
     >
       <ul className="flex items-center gap-4 list-none m-0 p-0">

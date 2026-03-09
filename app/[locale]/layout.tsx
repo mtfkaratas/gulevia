@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/header";
+import { SiteFooter } from "@/components/footer";
 import type { Locale } from "@/lib/locale";
 
 type Props = {
@@ -33,6 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <div className="min-h-screen bg-white">
       <Header currentLocale={locale as Locale} />
       <main>{children}</main>
+      <SiteFooter />
     </div>
   );
 }
