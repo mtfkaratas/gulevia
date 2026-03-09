@@ -1,7 +1,8 @@
 "use client";
 
+import ReactCountryFlag from "react-country-flag";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { LOCALES, LOCALE_LABELS, LOCALE_FLAGS, type Locale } from "@/lib/locale";
+import { LOCALES, LOCALE_LABELS, LOCALE_TO_COUNTRY_CODE, type Locale } from "@/lib/locale";
 
 type CountrySelectProps = {
   /** Current locale (from URL). */
@@ -47,9 +48,22 @@ export function CountrySelect({
     router.replace(internalPath as Parameters<typeof router.replace>[0], { locale: value });
   }
 
+  const countryCode = LOCALE_TO_COUNTRY_CODE[currentLocale];
+
   return (
     <label className={`inline-flex items-center gap-1.5 ${className}`}>
       <span className="sr-only">Select country</span>
+      <span
+        className="flex shrink-0 overflow-hidden rounded-full size-6"
+        aria-hidden
+      >
+        <ReactCountryFlag
+          countryCode={countryCode}
+          svg
+          style={{ width: "1.5rem", height: "1.5rem" }}
+          title={LOCALE_LABELS[currentLocale]}
+        />
+      </span>
       <select
         value={currentLocale}
         onChange={handleChange}
@@ -63,7 +77,7 @@ export function CountrySelect({
       >
         {LOCALES.map((locale) => (
           <option key={locale} value={locale}>
-            {flagsOnly ? LOCALE_FLAGS[locale] : `${LOCALE_FLAGS[locale]} ${LOCALE_LABELS[locale]}`}
+            {LOCALE_LABELS[locale]}
           </option>
         ))}
       </select>
